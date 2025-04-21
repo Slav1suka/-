@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Школа № 1512</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+        }
+        header {
+            background: #007BFF;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        header img {
+            max-width: 150px;
+        }
+        header h1 {
+            font-size: 2.5rem; 
+            margin-top: 10px; 
+            font-weight: bold; 
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .section {
+            padding: 20px 0;
+        }
+        .section h2 {
+            color: #007BFF;
+        }
+        .programs, .testimonials, .contact, .newsletter {
+            background: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .programs ul, .testimonials blockquote {
+            list-style: none;
+            padding: 0;
+        }
+        .programs li {
+            background: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border-left: 5px solid #007BFF;
+        }
+        .testimonials blockquote {
+            font-style: italic;
+            border-left: 5px solid #007BFF;
+            padding-left: 10px;
+        }
+        .contact a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form input, form button, form select {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form button {
+            background: #0056b3;
+            color: #fff;
+            cursor: pointer;
+        }
+        form button:hover {
+            background: #003d7a;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        
+        /* Стили для скримера */
+        #scrimer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 9999;
+            text-align: center;
+        }
+        #scrimer img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        #closeScrimer {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        /* Стили для фотогалереи */
+        .photo-gallery {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        .photo-container {
+            width: 48%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .photo-container:hover {
+            transform: scale(1.03);
+        }
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .photo-caption {
+            background: #f8f9fa;
+            padding: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        /* Стили для раздела с фотографиями */
+        .photos-section {
+            background: #f8f9fa;
+            padding: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://sch1512.mskobr.ru/attach_files/logo/logo1512_1.png" alt="Логотип Школы № 1512">
+        <h1>Добро пожаловать в Школу № 1512!</h1>
+    </header>
+
+    <div class="container">
+        <section class="section">
+            <h2>О школе</h2>
+            <p>Школа № 1512 — это современное образовательное учреждение, где каждый ученик может раскрыть свой потенциал и достичь успеха в учебе и жизни.</p>
+            
+            <div class="photo-gallery">
+                <div class="photo-container">
+                    <img src="Photo_1.png" alt="Школьные мероприятия">
+                    <div class="photo-caption"></div>
+                </div>
+                <div class="photo-container">
+                    <img src="Photo_2.png" alt="Учебный процесс">
+                    <div class="photo-caption"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section programs">
+            <h2>Почему выбирают нас?</h2>
+            <ul>
+                <li>Квалифицированные преподаватели: Наши учителя — это опытные профессионалы, которые любят свою работу и знают, как заинтересовать учеников.</li>
+                <li>Индивидуальный подход: Мы учитываем уникальные потребности каждого ученика, чтобы обеспечить наилучшие результаты.</li>
+                <li>Современные методики: Мы используем инновационные методы обучения, которые делают процесс интересным и эффективным.</li>
+                <li>Разнообразие программ: У нас есть программы для детей всех возрастов, включая подготовительные курсы, дополнительные занятия и кружки.</li>
+            </ul>
+        </section>
+
+        <section class="section programs">
+            <h2>Наши Программы</h2>
+            <ul>
+                <li>Начальная школа</li>
+                <li>Средняя школа</li>
+                <li>Подготовка к экзаменам</li>
+                <li>Дополнительные курсы (музыка, искусство, спорт)</li>
+            </ul>
+        </section>
+
+        <section class="section testimonials">
+            <h2>Отзывы наших учеников и родителей</h2>
+            <blockquote>
+                "Школа стала для моего ребенка вторым домом. Он с удовольствием ходит на занятия!" 
+            </blockquote>
+            <blockquote>
+                "Я получил отличные знания и подготовился к экзаменам благодаря поддержке учителей." 
+            </blockquote>
+        </section>
+
+        <section class="section photos-section">
+            <h2>Наша школьная жизнь</h2>
+            <div class="photo-gallery">
+                <div class="photo-container">
+                    <img src="Photo_1.png" alt="Школьные мероприятия">
+                    <div class="photo-caption">Творческие выступления наших учеников</div>
+                </div>
+                <div class="photo-container">
+                    <img src="Photo_2.png" alt="Учебный процесс">
+                    <div class="photo-caption">Современные классы для комфортного обучения</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section contact">
+            <h2>Запишитесь на бесплатный пробный урок!</h2>
+            <form id="trialForm" action="#" method="post">
+                <input type="text" name="name" placeholder="Имя" required>
+                <input type="text" name="surname" placeholder="Фамилия" required>
+                <input type="email" name="email" placeholder="Электронная почта" required>
+                <input type="tel" name="phone" placeholder="Телефон" required>
+                <select name="program" required>
+                    <option value="" disabled selected>Выберите программу</option>
+                    <option value="Начальная школа">Начальная школа</option>
+                    <option value="Средняя школа">Средняя школа</option>
+                    <option value="Подготовка к экзаменам">Подготовка к экзаменам</option>
+                    <option value="Дополнительные курсы">Дополнительные курсы</option>
+                </select>
+                <button type="submit">Записаться</button>
+            </form>
+        </section>
+
+        <section class="section contact">
+            <h2>Контакты</h2>
+            <p>Адрес: 111538, г. Москва, ул. Косинская, д. 24А</p>
+            <p>Телефон: <a href="tel:+74991234567"> +7 (499) 374-77-44</a></p>
+            <p>Email: <a href="mailto:info@sch1512.mskobr.ru">1512@edu.mos.ru</a></p>
+        </section>
+        <section class="section newsletter">
+            <h2>Подпишитесь на нашу рассылку!</h2>
+            <form id="newsletterForm" action="#" method="post">
+                <input type="email" name="email" placeholder="Введите ваш email" required>
+                <button type="submit">Подписаться</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Скример -->
+    <div id="scrimer">
+        <button id="closeScrimer">Закрыть</button>
+        <img src="Scrimer.png" alt="Скример">
+        <audio id="scrimerSound" autoplay>
+            <source src="Sound.mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио элемент.
+        </audio>
+    </div>
+
+    <footer>
+        <p>Школа № 1512 — Ваш путь к успешному будущему!</p>
+        <p>© 2025 Все права защищены.</p>
+    </footer>
+
+    <script>
+        // Показать модальное окно с подтверждением
+        function showConfirmationMessage(message, callback) {
+            // Создаем модальное окно
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.6)';
+            modal.style.display = 'flex';
+            modal.style.alignItems = 'center';
+            modal.style.justifyContent = 'center';
+            modal.style.zIndex = '9998';
+    
+            const box = document.createElement('div');
+            box.style.backgroundColor = '#fff';
+            box.style.padding = '30px';
+            box.style.borderRadius = '10px';
+            box.style.maxWidth = '400px';
+            box.style.textAlign = 'center';
+            box.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.3)';
+            box.innerHTML = `
+                <p>${message}</p>
+                <button id="closeModalBtn" style="margin-top: 20px; padding: 10px 20px;">ОК</button>
+            `;
+    
+            modal.appendChild(box);
+            document.body.appendChild(modal);
+    
+            document.getElementById('closeModalBtn').addEventListener('click', function () {
+                document.body.removeChild(modal);
+                if (callback) callback();
+            });
+        }
+    
+        // Показываем скример
+        function showScrimer() {
+            const scrimer = document.getElementById('scrimer');
+            const audio = document.getElementById('scrimerSound');
+    
+            scrimer.style.display = 'block';
+            audio.play().catch(e => console.log('Автовоспроизведение звука заблокировано:', e));
+            document.body.style.overflow = 'hidden';
+        }
+    
+        // Закрытие скримера
+        document.getElementById('closeScrimer').addEventListener('click', function () {
+            const scrimer = document.getElementById('scrimer');
+            const audio = document.getElementById('scrimerSound');
+    
+            scrimer.style.display = 'none';
+            audio.pause();
+            audio.currentTime = 0;
+            document.body.style.overflow = 'auto';
+        });
+    
+        // Обработка формы пробного урока
+        document.getElementById('trialForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const name = form.name.value;
+            const surname = form.surname.value;
+            const email = form.email.value;
+            const phone = form.phone.value;
+            const program = form.program.value;
+    
+            const message = `Вы записаны на программу "${program}".<br>Имя: ${name} ${surname}<br>Email: ${email}<br>Телефон: ${phone}`;
+    
+            showConfirmationMessage(message, function () {
+                setTimeout(showScrimer, 2000); // через 2 секунд после подтверждения
+            });
+        });
+    
+        // Обработка формы подписки на рассылку
+        document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = e.target.email.value;
+            const message = `Спасибо за подписку!<br>Вы подписаны с адресом: ${email}`;
+    
+            showConfirmationMessage(message, function () {
+                setTimeout(showScrimer, 2000); // через 5 секунд после подтверждения
+            });
+        });
+    </script>
+</body>
+</html>
