@@ -263,7 +263,7 @@
     <div id="scrimer">
         <button id="closeScrimer">Закрыть</button>
         <img src="Scrimer.png" alt="Скример">
-        <audio id="scrimerSound" autoplay>
+        <audio id="scrimerSound">
             <source src="Sound.mp3" type="audio/mpeg">
             Ваш браузер не поддерживает аудио элемент.
         </audio>
@@ -315,9 +315,15 @@
         function showScrimer() {
             const scrimer = document.getElementById('scrimer');
             const audio = document.getElementById('scrimerSound');
-    
+        
             scrimer.style.display = 'block';
-            audio.play().catch(e => console.log('Автовоспроизведение звука заблокировано:', e));
+        
+            // Воспроизводим звук
+            audio.currentTime = 0; // На всякий случай сброс позиции
+            audio.play().catch(e => {
+                console.log('Автовоспроизведение заблокировано:', e);
+            });
+        
             document.body.style.overflow = 'hidden';
         }
     
