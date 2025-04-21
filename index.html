@@ -93,35 +93,6 @@
             margin-top: 20px;
         }
         
-        /* Стили для скримера */
-        #scrimer {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black;
-            z-index: 9999;
-            text-align: center;
-        }
-        #scrimer img {
-            max-width: 100%;
-            max-height: 100%;
-        }
-        #closeScrimer {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: red;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        
         /* Стили для фотогалереи */
         .photo-gallery {
             display: flex;
@@ -258,17 +229,6 @@
             </form>
         </section>
     </div>
-
-    <!-- Скример -->
-    <div id="scrimer">
-        <button id="closeScrimer">Закрыть</button>
-        <img src="Scrimer.png" alt="Скример">
-        <audio id="scrimerSound">
-            <source src="Sound.mp3" type="audio/mpeg">
-            Ваш браузер не поддерживает аудио элемент.
-        </audio>
-    </div>
-
     <footer>
         <p>Школа № 1512 — Ваш путь к успешному будущему!</p>
         <p>© 2025 Все права защищены.</p>
@@ -310,34 +270,6 @@
                 if (callback) callback();
             });
         }
-    
-        // Показываем скример
-        function showScrimer() {
-            const scrimer = document.getElementById('scrimer');
-            const audio = document.getElementById('scrimerSound');
-        
-            scrimer.style.display = 'block';
-        
-            // Воспроизводим звук
-            audio.currentTime = 0; // На всякий случай сброс позиции
-            audio.play().catch(e => {
-                console.log('Автовоспроизведение заблокировано:', e);
-            });
-        
-            document.body.style.overflow = 'hidden';
-        }
-    
-        // Закрытие скримера
-        document.getElementById('closeScrimer').addEventListener('click', function () {
-            const scrimer = document.getElementById('scrimer');
-            const audio = document.getElementById('scrimerSound');
-    
-            scrimer.style.display = 'none';
-            audio.pause();
-            audio.currentTime = 0;
-            document.body.style.overflow = 'auto';
-        });
-    
         // Обработка формы пробного урока
         document.getElementById('trialForm').addEventListener('submit', function (e) {
             e.preventDefault();
